@@ -34,7 +34,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package src.main.java.com.adonax.audiocue.supportpack;
+package com.adonax.audiocue.supportpack;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,9 +42,9 @@ import java.net.URL;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import src.main.java.com.adonax.audiocue.AudioCue;
-import src.main.java.com.adonax.audiocue.AudioCueInstanceEvent;
-import src.main.java.com.adonax.audiocue.AudioCueListener;
+import com.adonax.audiocue.AudioCue;
+import com.adonax.audiocue.AudioCueInstanceEvent;
+import com.adonax.audiocue.AudioCueListener;
 
 /**
  * {@code BattleField} is part of <em>AudioCueSupportPack</em>, 
@@ -102,7 +102,7 @@ public class BattleField implements AudioCueListener
 	{
 	    System.out.println("battleField() start");
 	    
-		URL url = this.getClass().getResource("res/shortshot.wav");
+		URL url = this.getClass().getResource("/res/shortshot.wav");
 	    AudioCue cueSemiAuto = AudioCue.makeStereoCue(url, 3);
 	    cueSemiAuto.setName("SemiAuto");
 	    cueSemiAuto.addAudioCueListener(this);
@@ -116,7 +116,7 @@ public class BattleField implements AudioCueListener
 		int machineGun0 = cueSemiAuto.obtainInstance();
 		boolean farMachineGunPan = true;
 		
-		url = this.getClass().getResource("res/gunshot.wav");
+		url = this.getClass().getResource("/res/gunshot.wav");
 	    AudioCue cueSingleShot = AudioCue.makeStereoCue(url, 8);
 	    cueSingleShot.setName("SingleShotSFX");
 		cueSingleShot.addAudioCueListener(this);

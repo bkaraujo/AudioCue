@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AudioCue.iml" filepath="$PROJECT_DIR$/.idea/AudioCue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java.AudioCue.main.iml" filepath="$PROJECT_DIR$/.idea/modules/java.AudioCue.main.iml" />
     </modules>
   </component>
 </project>

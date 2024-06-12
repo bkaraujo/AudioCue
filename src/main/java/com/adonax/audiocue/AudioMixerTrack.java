@@ -18,7 +18,7 @@
  *  License along with Per Frame Audio Mixer System.  If not, 
  *  see <http://www.gnu.org/licenses/>.
  */
-package src.main.java.com.adonax.audiocue;
+package com.adonax.audiocue;
 
 import java.io.IOException;
 

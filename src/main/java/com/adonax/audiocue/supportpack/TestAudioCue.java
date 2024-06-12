@@ -34,7 +34,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package src.main.java.com.adonax.audiocue.supportpack;
+package com.adonax.audiocue.supportpack;
 
 import java.io.IOException;
 import java.net.URL;
@@ -46,9 +46,9 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import src.main.java.com.adonax.audiocue.AudioCue;
-import src.main.java.com.adonax.audiocue.AudioCueInstanceEvent;
-import src.main.java.com.adonax.audiocue.AudioCueListener;
+import com.adonax.audiocue.AudioCue;
+import com.adonax.audiocue.AudioCueInstanceEvent;
+import com.adonax.audiocue.AudioCueListener;
 
 /**
  * {@code TestAudioCue} is part of <em>AudioCueSupportPack</em>,
@@ -117,9 +117,9 @@ public class TestAudioCue implements AudioCueListener
 	{	
 		System.out.println("verifyClip() start");
 		URL url;
-//		url = this.getClass().getResource("res/gunshot.wav");
-		url = this.getClass().getResource("res/a3.wav");
-//		url = this.getClass().getResource("res/frog.wav");
+//		url = this.getClass().getResource("/res/gunshot.wav");
+		url = this.getClass().getResource("/res/a3.wav");
+//		url = this.getClass().getResource("/res/frog.wav");
 		
 		System.out.println("Test Normal Java Clip");
 	    AudioInputStream ais = AudioSystem.getAudioInputStream(url);
@@ -149,7 +149,7 @@ public class TestAudioCue implements AudioCueListener
 	    boolean openTestSucceeds = false;
 	    boolean closeTestSucceeds = false;
 	    
-	    URL url = this.getClass().getResource("res/a3.wav");	    
+	    URL url = this.getClass().getResource("/res/a3.wav");	    
 	    AudioCue cue = AudioCue.makeStereoCue(url, 1); 
 	    cue.addAudioCueListener(this);
 	    
@@ -185,7 +185,7 @@ public class TestAudioCue implements AudioCueListener
 		System.out.println("checkGetLengthMethods() start");
 		
 		// wav stats via Clip methods
-		URL url = this.getClass().getResource("res/a3.wav");
+		URL url = this.getClass().getResource("/res/a3.wav");
 		AudioInputStream ais = AudioSystem.getAudioInputStream(url);
 	    DataLine.Info info = new DataLine.Info(Clip.class, ais.getFormat());
 	    Clip clip = (Clip) AudioSystem.getLine(info);
@@ -253,7 +253,7 @@ public class TestAudioCue implements AudioCueListener
 		LineUnavailableException, InterruptedException
 	{
 	    System.out.println("testConcurrentPlays() start");
-		URL url = this.getClass().getResource("res/a3.wav");	    
+		URL url = this.getClass().getResource("/res/a3.wav");	    
 	    AudioCue cue = AudioCue.makeStereoCue(url, 4); // one less than played!
 	    cue.addAudioCueListener(this);
 	    cue.open();
@@ -305,8 +305,8 @@ public class TestAudioCue implements AudioCueListener
 		LineUnavailableException, InterruptedException
 	{
 	    System.out.println("testPlaybackSpeed() start");
-		URL url = this.getClass().getResource("res/gunshot.wav");
-//		URL url = this.getClass().getResource("res/a3.wav");	    
+		URL url = this.getClass().getResource("/res/gunshot.wav");
+//		URL url = this.getClass().getResource("/res/a3.wav");	    
 	    AudioCue cue = AudioCue.makeStereoCue(url, 4);
 	    cue.addAudioCueListener(this);
 		cue.open();
@@ -335,7 +335,7 @@ public class TestAudioCue implements AudioCueListener
 		IOException, LineUnavailableException, InterruptedException
 	{
 	    System.out.println("testReset() start");
-		URL url = this.getClass().getResource("res/gunshot.wav");
+		URL url = this.getClass().getResource("/res/gunshot.wav");
 	    AudioCue cue = AudioCue.makeStereoCue(url, 2);
 	    cue.addAudioCueListener(this);
 	    cue.open();
@@ -390,7 +390,7 @@ public class TestAudioCue implements AudioCueListener
 	IOException, LineUnavailableException, InterruptedException
 	{
 	    System.out.println("testLooping() start");
-		URL url = this.getClass().getResource("res/shortshot.wav");
+		URL url = this.getClass().getResource("/res/shortshot.wav");
 	    AudioCue cue = AudioCue.makeStereoCue(url, 1);
 	    cue.addAudioCueListener(this);
 	    cue.open();

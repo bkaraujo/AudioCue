@@ -34,7 +34,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package src.main.java.com.adonax.audiocue.supportpack;
+package com.adonax.audiocue.supportpack;
 
 import java.io.IOException;
 import java.net.URL;
@@ -46,7 +46,7 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import src.main.java.com.adonax.audiocue.AudioCue;
+import com.adonax.audiocue.AudioCue;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -297,7 +297,7 @@ public class SlidersTest extends Application
 		SoundHandler() throws UnsupportedAudioFileException, 
 			IOException, LineUnavailableException 
 		{	
-			URL url = this.getClass().getResource("res/a3.wav");
+			URL url = this.getClass().getResource("/res/a3.wav");
 			
 			// for the AudioCue
 			cue = AudioCue.makeStereoCue(url, POLYPHONY);
